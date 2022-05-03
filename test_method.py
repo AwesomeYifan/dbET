@@ -51,7 +51,6 @@ for i in range(0,5):
         cur.execute("SET enable_" + s + " = OFF")
         
 # generate the execution time distribution for each candidate plan:
-
 for alpha in alphas:
     upper_bound_times = models[alpha].predict(plans).flatten().tolist()
     print("the execution time upper bound of eah plan under prob. level", 1-alpha, ":", upper_bound_times)
